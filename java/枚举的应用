@@ -1,5 +1,6 @@
-在我们程序开发过程中，合理使用枚举可提升代码质量与整洁可读。
+**在我们程序开发过程中，合理使用枚举可提升代码质量与整洁可读。**
 
+```
     /**
     * ClassName: SmsTempEnum
     * Function:  短信模板内容枚举类
@@ -85,9 +86,12 @@
     }
 
 }
-发送短信根据短信模板ID获取枚举值
+```
 
+发送短信根据短信模板ID获取枚举值
+```
 // 通过枚举获取短信模板内容
 String nameByValue = SmsTempEnum.getNameByValue(Integer.parseInt(smsTempId));
 String[] sendParams = new String[10];
 String format = StringUtils.format(nameByValue, sendParams);
+```
