@@ -1,20 +1,24 @@
-在我们程序开发过程中，合理使用枚举可提升代码质量与整洁可读。
-/**
- * ClassName: SmsTempEnum
- * Function:  短信模板内容枚举类
- * Date:      2021/6/3 14:44
- * author     yu
- * version    V1.0
- */
-public enum SmsTempEnum {
+**在我们程序开发过程中，合理使用枚举可提升代码质量与整洁可读。**
 
-    Register("您已获取登录名:{} 密码为:{}请使用登录名和密码在登录页登录后完善信息，并牢记登录名和密码。", Integer.parseInt(SmsUtils.REGISTER_TEMP_ID)),
-    Yzm("验证码为：{}，若非本人操作，请勿泄露。",Integer.parseInt(SmsUtils.YZM_TEMP_ID)),
-    Luqu("家长您好，您的孩子{}已被{}录取，您可以登录济宁市任城区适龄儿童入学服务平台jy.rencheng.gov.cn查询（报名号：{}，查询密码为{}），请您关注并按照公告的报到时间按时去学校报到。",Integer.parseInt(SmsUtils.LUQU_TEMP_ID)),
-    Jfrxzy("家长您好，您还未登录“进城务工随迁子女入学志愿填报系统”填报志愿，最晚截至填报时间为{}，请及时填报，逾期将失去本次填报资格。",Integer.parseInt(SmsUtils.JFRXZY_TEMP_ID)),
-    Yuyue("家长您好，您已成功预约办理，请您按照规定时间{}前去{}办理。",Integer.parseInt(SmsUtils.YY_TEMP_ID)),
-    Cqpw("您已填写参加派位，须由服务区内学校确认后并在其提供的派位确认单上签字，派位资格才有效，否则后果自负。",Integer.parseInt(SmsUtils.CQPW_TEMP_ID)),
-    Xxcheck("家长您好，您的孩子入学信息已被{}审验通过。",Integer.parseInt(SmsUtils.XX_CHECK_ID));
+```
+    /**
+    * ClassName: SmsTempEnum
+    * Function:  短信模板内容枚举类
+    * Date:      2021/6/3 14:44
+    * author     yu
+    * version    V1.0
+    */
+
+
+  public enum SmsTempEnum {
+
+  Register("您已获取登录名:{} 密码为:{}请使用登录名和密码在登录页登录后完善信息，并牢记登录名和密码。", Integer.parseInt(SmsUtils.REGISTER_TEMP_ID)),
+  Yzm("验证码为：{}，若非本人操作，请勿泄露。",Integer.parseInt(SmsUtils.YZM_TEMP_ID)),
+  Luqu("家长您好，您的孩子{}已被{}录取，您可以登录济宁市任城区适龄儿童入学服务平台jy.rencheng.gov.cn查询（报名号：{}，查询密码为{}），请您关注并按照公告的报到时间按时去学校报到。",Integer.parseInt(SmsUtils.LUQU_TEMP_ID)),
+  Jfrxzy("家长您好，您还未登录“进城务工随迁子女入学志愿填报系统”填报志愿，最晚截至填报时间为{}，请及时填报，逾期将失去本次填报资格。",Integer.parseInt(SmsUtils.JFRXZY_TEMP_ID)),
+  Yuyue("家长您好，您已成功预约办理，请您按照规定时间{}前去{}办理。",Integer.parseInt(SmsUtils.YY_TEMP_ID)),
+  Cqpw("您已填写参加派位，须由服务区内学校确认后并在其提供的派位确认单上签字，派位资格才有效，否则后果自负。",Integer.parseInt(SmsUtils.CQPW_TEMP_ID)),
+  Xxcheck("家长您好，您的孩子入学信息已被{}审验通过。",Integer.parseInt(SmsUtils.XX_CHECK_ID));
 
 
     // 成员变量
@@ -82,11 +86,13 @@ public enum SmsTempEnum {
     }
 
 }
+```
 
 发送短信根据短信模板ID获取枚举值
+```
 // 通过枚举获取短信模板内容
 String nameByValue = SmsTempEnum.getNameByValue(Integer.parseInt(smsTempId));
 String[] sendParams = new String[10];
 String format = StringUtils.format(nameByValue, sendParams);
-
+```
 
