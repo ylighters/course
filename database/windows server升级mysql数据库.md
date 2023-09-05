@@ -18,25 +18,46 @@
 ` mysqld --remove MySQL ` 
 
 ### 7、进入到新版mysql的bin文件里面执行mysql安装
-` mysqld --install mysql ` 
+` mysqld --install mysql5743 ` 
 
 ### 8、启动Mysql服务
 
-net start mysql
+net start mysql5743
 
 ### 9、升级mysql：
 
 mysql_upgrade -uroot -p
 
+mysql_upgrade -uroot -p --skip-version-check
+
 ### 10、关闭、重启Mysql
 
-net stop mysql
-net start mysql
+net stop mysql5743
+net start mysql5743
 
 ### 11、验证Mysql版本
 
 select version(); 
 
+## problem
+Table 'performance_schema.session_status' doesn't exist
+
+原因：mysql低版本升级到高版本；
+
+解决：wind+R 输入cmd 打开命令框；（ps：我本地路径 D:\phpstudy\mysql\bin）
+
+           1.打开cmd，进入mysql的安装目录下的bin目录下。
+
+                 d: 
+
+                 cd phpstudy\mysql\bin
+
+            2. 执行mysql_upgrade -u root -p --force命令然后输入password，问题解决。
+
+                  mysql_upgrade -u root -p --force
+
+                 //输入密码
+重启phpstudy即可；
 
 
 ### 参考链接
