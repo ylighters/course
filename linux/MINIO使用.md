@@ -1,4 +1,4 @@
-##minio
+## minio
 >MinIO 是一款高性能、分布式的对象存储系统. 它是一款软件产品, 可以100%的运行在标准硬件。即X86等低成本机器也能够很好的运行MinIO。
 http://www.minio.org.cn/
 
