@@ -40,6 +40,15 @@ net start mysql5743
 select version(); 
 
 ## problem
+
+>如果mysqld --install添加服务后在服务查看路径还是原数据库，需要把原数据库的环境变量删除，并重启服务器，在执行mysqld --install
+
+>数据库配置路径  data和basedir都需要改到当前升级的数据库路径下
+
+
+
+
+
 Table 'performance_schema.session_status' doesn't exist
 
 原因：mysql低版本升级到高版本；
@@ -64,3 +73,4 @@ Table 'performance_schema.session_status' doesn't exist
 https://fireman.blog.csdn.net/article/details/107046152?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-107046152-blog-131681532.235%5Ev38%5Epc_relevant_sort_base2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-107046152-blog-131681532.235%5Ev38%5Epc_relevant_sort_base2&utm_relevant_index=5
 
 https://blog.csdn.net/solly793755670/article/details/131681532
+
