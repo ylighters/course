@@ -7,6 +7,10 @@ find /data/mysqldata -mtime +7 -name "mysqlTable_*.sql" -exec rm -rf {} \;
 
 >暂时不管用/usr/local/mysql3308/bin/mysqldump  --defaults-extra-file=/usr/local/mysql3308/my.cnf  --basedir=/usr/local/mysql3308  --datadir=/data/mysql3308  rcrxgl > /data/mysqldata/mysql_$(date "+%Y%m%d_%H:%M:%S").sql;
 
+> /bin/sh
+/usr/bin/mysqldump -uroot -pjnyz1@3. wisdom_vote_jg > /data/backup/mysqldata/mysql_$(date "+%Y%m%d_%H:%M:%S").sql;
+find /data/backup/mysqldata -mtime +5 -name "mysqlTable_*.sql" -exec rm -rf {} \;
+
 ###2、给sh文件授权
 chmod +x backupsql.sh
 

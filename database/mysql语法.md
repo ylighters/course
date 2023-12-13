@@ -21,6 +21,8 @@
 导出sql
 > mysqldump -h localhost -u root -proot jndx_real > /home/jndxreal20190422_qh1.sql;
 
+> mysqldump -h localhost -u root -pjnyz1@3. thzhjz > /home/thzhjz_20231211.sql;
+
 查看当前使用的数据库 
 > select database();
 
